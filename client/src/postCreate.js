@@ -7,7 +7,7 @@ export default function CreatePost() {
   const createPostHandle = async (e) => {
     e.preventDefault()
 
-    const res = await axios.post('http://localhost:3000/posts', {
+    await axios.post('http://localhost:3000/posts', {
       title
     })
 
@@ -15,7 +15,7 @@ export default function CreatePost() {
   }
  
   return (
-    <div className="border-2 p-4 m-5">
+    <div className="border-2 p-4 my-5">
       <h2 className="text-base">Create new post</h2>
       <form onSubmit={createPostHandle} className="flex mt-3">
         <div className="flex items-center w-full">

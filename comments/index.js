@@ -1,11 +1,13 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const { randomBytes } = require('crypto')
+const cors = require('cors')
 
 const app = express()
 const comments = {}
 
 app.use(bodyParser.json())
+app.use(cors())
 
 app.get('/posts/:id/comments', (req, res) => {
   res.send(comments[req.params.id] || [])
@@ -29,4 +31,4 @@ app.post('/posts/:id/comments', (req, res) => {
 })
 
 
-app.listen(3001, () => console.log('comment server running on port 3001'))
+app.listen(3002, () => console.log('comment server running on port 3002'))

@@ -1,11 +1,13 @@
 
 import PostCreate from "./postCreate";
+import PostList from "./postList";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-xl m-5">Mini microservice blog project</h1>
-      <PostCreate/>
+    <div className="m-5">
+      <h1 className="text-xl">Mini microservice blog project</h1>
+      <PostCreate />
+      <PostList/>
     </div>
   );
 }
