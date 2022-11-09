@@ -24,7 +24,7 @@ app.post('/posts', async (req, res) => {
     id, title
   }
 
-  await axios.post('http://localhost:3003/events', {
+  await axios.post('http://localhost:3002/events', {
     type: 'postCreated',
     data: {
       id, title
@@ -32,6 +32,10 @@ app.post('/posts', async (req, res) => {
   })
 
   res.status(201).send(posts[id])
+})
+
+app.post('/events', (req, res) => {
+  const event = req.body.type
 })
 
 app.listen(3000, () => console.log('post server running on port 3000'))

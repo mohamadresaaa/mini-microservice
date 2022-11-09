@@ -29,7 +29,7 @@ app.post('/posts/:id/comments', async (req, res) => {
 
   comments[postId] = newComment
 
-  await axios.post('http://localhost:3003/events', {
+  await axios.post('http://localhost:3002/events', {
     type: 'commentCreated',
     data: {
       id: commentId, content, postId
@@ -39,5 +39,8 @@ app.post('/posts/:id/comments', async (req, res) => {
   res.status(201).send(newComment)
 })
 
+app.post('/events', (req, res) => {
+  const event = req.body.type
+})
 
-app.listen(3002, () => console.log('comment server running on port 3002'))
+app.listen(3001, () => console.log('comment server running on port 3001'))

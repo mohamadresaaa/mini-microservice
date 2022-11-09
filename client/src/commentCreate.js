@@ -8,13 +8,11 @@ const CommentCreate = ({ postId }) => {
   const submitHandler = async (e) => {
     e.preventDefault()
 
-    const res = await axios.post(`http://localhost:3002/posts/${postId}/comments`, {
+    const res = await axios.post(`http://localhost:3001/posts/${postId}/comments`, {
       content
     })
 
     setContent('')
-
-    console.log('res', res)
   }
 
   return (
